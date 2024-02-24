@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Oswald:wght@300;400;700&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Catan Hand Calculator</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src=".\img\logo\phoenix.png" alt="Ambivaly"><br>
+    </header>
+    <h1>Catan Hand Calculator</h1>
+    <main>
+        <div class="container" id="jscontainer">
+            <div class="cardcount">
+                <span id="cardinfo">Please select the cards in your hand below</span>
+            </div>
+        </div>
+        <br><br>
+        <form name="catanform">
+            <div id="priority-box">
+                What would you like to prioritize building?:<br> 
+            </div>
+            <input type="button" id="priority-build" name="priority-build" value="Auto-Build" onclick="priorityBuild()">
+            <br>
+            <div class="formitems">
+                <div class="formcard">
+                    <img src=".\img\cards\card_wood.png" alt="wood" onclick="addResource('wood')"><br>
+                    <label for="wood">Wood:</label><br>
+                    <input type="number" id="wood" name="wood" value=0 min=0>
+                </div>
+                <div class="formcard">
+                    <img src=".\img\cards\card_brick.png" alt="brick" onclick="addResource('brick')"><br>
+                    <label for="brick">Brick</label><br>
+                    <input type="number" id="brick" name="brick" value=0 min=0>
+                </div>
+                <div class="formcard">
+                    <img src=".\img\cards\card_sheep.png" alt="sheep" onclick="addResource('sheep')"><br>
+                    <label for="sheep">Sheep</label><br>
+                    <input type="number" id="sheep" name="sheep" value=0 min=0>
+                </div>
+                <div class="formcard">
+                    <img src=".\img\cards\card_wheat.png" alt="wheat" onclick="addResource('wheat')"><br>
+                    <label for="wheat">Wheat</label><br>
+                    <input type="number" id="wheat" name="wheat" value=0 min=0>
+                </div>
+                <div class="formcard">
+                    <img src=".\img\cards\card_ore.png" alt="ore" onclick="addResource('ore')"><br>
+                    <label for="ore">Ore</label><br>
+                    <input type="number" id="ore" name="ore" value=0 min=0>
+                </div>
+            </div>
+            <input type="button" id="submit" name="submit" value="Submit" onclick="generateDisplayText(submit=true)">
+            <input type="button" id="clear" name="clear" value="Clear" onclick="clearButton()">
+            <input type ="checkbox" id="catanplus" name="catanplus" value="CatanPlus" onclick="catanPlus()">
+            <label for="catanplus">CatanPlus+? </label>
+        </form>
+        <br>
+        <div>
+            To Do:
+            <ul>
+                <li><s>Add click/hover effects to cards and buildings</s></li>
+                <li>Improve site formatting, make more visually appealing</li>
+                <li>Long term: Generate build options based on a priority list with more options</li>
+                <li>Long Term: Refine calculations for trading (ports/4:1)</li>
+            </ul>
+        </div>
+        <form name="newbuilding">
+            Add a custom building below!
+            <br>
+            <label for="buildname">Building Name:</label>
+            <input type="text" id="buildname" name="buildname" value="">
+            <br>
+            (Input image URL, some don't work due to cross-origin issues)
+            <br>
+            <label for="buildimage">Building Image:</label>
+            <input type="url" id="buildimage" name="buildimage" value="">
+            <label for="buildwood">Wood Cost:</label>
+            <input type="number" id="buildwood" name="buildwood" value="0" min="0">
+            <label for="buildbrick">Brick Cost:</label>
+            <input type="number" id="buildbrick" name="buildbrick" value="0" min="0">
+            <br>
+            <label for="buildsheep">Sheep Cost:</label>
+            <input type="number" id="buildsheep" name="buildsheep" value="0" min="0">
+            <label for="buildwheat">Wheat Cost:</label>
+            <input type="number" id="buildwheat" name="buildwheat" value="0" min="0">
+            <label for="buildore">Ore Cost:</label>
+            <input type="number" id="buildore" name="buildore" value="0" min="0">
+            <br>
+            <input type="button" id="custombuild" name="custombuild" value="Add" onclick="addBuilding()">
+        </form>
+        <br>
+
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+<footer>
+    <img src=".\img\logo\phoenix.png" alt="Ambivaly">
+    <div class="left-footer"> Ambivaly</div>
+    <div class="right-footer"><script type="text/javascript">document.write("© "+new Date().getFullYear()+" Anthony Milton<br>");</script> 
+    anthony.milton@ambivaly.com</div>
+</footer>
+
+</html>

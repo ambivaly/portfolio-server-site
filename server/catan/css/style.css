@@ -1,0 +1,119 @@
+/*
+    Fonts in use are below: 
+
+    font-family:'Oswald', Verdana, Arial, sans-serif;
+    font-family: 'Lora', 'Times New Roman', Garamond, serif;
+    font-family: 'Silkscreen', 'Brush Script MT', Garamond, fantasy;
+*/
+
+header, footer{
+    background-color:#FF8C00;
+    overflow: hidden;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    font-size: x-large;
+}
+
+header img {
+    width: 10%;
+}
+
+
+body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    width: 100%;
+    margin: 0 0 0 0;
+    background-color:#FF8C00;
+}
+
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h1 {
+    color: black;
+    font-size: 34px;
+    border-style: none;
+}
+
+.container {
+    text-align: center;
+    font-family: 'Lora', 'Times New Roman', Garamond, serif;
+    font-size: 1.5vw;
+}
+
+.container img {
+    width: 80%;
+}
+
+form {
+    text-align: center;
+}
+
+.formitems, .buildingitems, .boughtbuildings{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.2vw;
+    font-family: 'Silkscreen', 'Brush Script MT', Garamond, fantasy;
+}
+
+.buildingitems, .boughtbuildings {
+    font-family: 'Lora', 'Times New Roman', Garamond, serif;
+}
+
+.formcard, .buildingcard {
+    width: 20%;
+    align-self: flex-end;
+}
+
+.formcard img {
+    margin: 3px 3px 3px 3px;
+    width: 90%;
+}
+
+.formcard img:hover, .buildingcard img:hover {
+    transform: rotate(0deg) scale(1);
+    -webkit-filter: drop-shadow(5px 5px 5px #222222);
+    filter: drop-shadow(5px 5px 5px #222222);
+}
+
+.formcard img:active, .buildingcard img:active {
+    transform:scale(0.9);
+    -webkit-filter: drop-shadow(10px 10px 10px black);
+    filter: drop-shadow(10px 10px 10px black);
+}
+
+.formcard input {
+    width: 90%;
+}
+
+.left-footer {
+    display: inline-block;
+    font-size: 28px;
+    padding-bottom: 3px;
+}
+
+footer img {
+    margin-top: 5px;
+    margin-left: 1%;
+    width: 30px;
+}
+
+.right-footer {
+    text-align: right;
+    float: right;
+    margin-right: 1%;
+
+}
+::selection {
+    color: none;
+    background: none;
+}
