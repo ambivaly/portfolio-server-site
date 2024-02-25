@@ -113,6 +113,12 @@ dist
 # DynamoDB Local files
 .dynamodb/
 
+# Config Variables
+config.js
+
+# Aircraft Data
+aircraft_data.json
+
 # TernJS port file
 .tern-port
 
