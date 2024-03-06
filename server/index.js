@@ -7,8 +7,10 @@ const config = require('./config')
 const app = express();
 const port = process.env.PORT || 8080
 
+app.use(express.static(path.join(__dirname, 'portfolio')))
 app.use(express.static(path.join(__dirname, 'catan')))
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'adsb')))
+
 
 AWS.config.update({
     region: config.aws.region,
@@ -39,7 +41,7 @@ const fetchDataAndWriteToFile = async () => {
 
         if (result.Items.length > 0) {
             const dataToWrite = JSON.stringify(result.Items, null, 2);
-            fs.writeFileSync(path.join(__dirname, '/build/aircraft_data.json'), dataToWrite);
+            fs.writeFileSync(path.join(__dirname, '/adsb/aircraft_data.json'), dataToWrite);
             //fs.writeFileSync(path.join('C:/Users/tjm55/Desktop/Coding Projects/Github Repos/sage-adsb-display-site/sage-radar/public/', 'aircraft_data.json'), dataToWrite);
             console.log('Data written to file successfully.');
         } else {
@@ -53,11 +55,15 @@ const fetchDataAndWriteToFile = async () => {
 setInterval(fetchDataAndWriteToFile, 6000);
 
 app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'portfolio', 'index.html'))
+})
+
+app.get('/catan', (req, res) => {
     res.sendFile(path.join(__dirname, 'catan', 'index.html'))
 })
 
-app.get('/radar', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+app.get('/adsb', (req, res) => {
+    res.sendFile(path.join(__dirname, 'adsb', 'index.html'))
 })
 
 app.listen(port, () => {

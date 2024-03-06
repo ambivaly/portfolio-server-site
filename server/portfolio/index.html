@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" style="scroll-padding-top: 78px">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS and other CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="./css/style.css" rel="stylesheet">
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <!--FontAwesome Icons-->
+        <script src="https://kit.fontawesome.com/4a91571f4f.js" crossorigin="anonymous"></script>
+        <!--Page Title-->
+        <title>Anthony Milton</title>
+
+    </head>
+    <body div data-bs-spy="scroll" data-bs-target="#topnav" data-bs-offset="0" tabindex="0">
+        <!--Navbar Stuff Here-->
+        <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-sm" id="topnav">
+            <div class="container-fluid">
+                <a class="navbar-brand navbar-text" href="#">
+                    <img src="./img/icon/phoenix-grey.png" alt="" height="40" class="d-inline-block align-text-bottom">
+                    Anthony Milton
+                </a>
+                <!--Left Side Text-->
+                <div class=" collapse navbar-collapse justify-content-end navbar-nav" id="collapsibleNavbar">
+                    <a class="nav-item nav-link active" href="#summary">
+                        Summary
+                    </a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-item nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#adsb">ADS-B Scope</a></li>
+                            <li><a class="dropdown-item" href="#catan">CATAN Hand Calculator</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                        </ul>
+                    </div>
+                    <a class="nav-item nav-link active" href="#edcerts">
+                        Education
+                    </a>
+                    <a class="nav-item nav-link" href="#work-experience">
+                        Work Experience
+                    </a>
+                </div>
+                <!--Right Side Icons-->
+                <div class="navbar justify-content-end ms-auto">
+                    <!--Github Link-->
+                    <a class="nav-item nav-link d-inline-block" href="https://github.com/ambivaly" target="_blank" rel="noopener noreferrer">
+                        <img src="./img/github/github-mark-white.png" height="30px">
+                    </a>
+                    <!--LinkedIn Link-->
+                    <a class="nav-item nav-link d-inline-block" href="https://www.linkedin.com/in/ambivaly/" target="_blank" rel="noopener noreferrer">
+                        <img src="./img/linkedin/in-white.png" height="30px">
+                    </a>
+                    <!--Nav Hamburger-->
+                    <button class="nav-item navbar-toggler navbar-expand-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="resume-container container-fluid p0">
+
+            <!--Summary-->
+            <div class="resume-section p-3 p-lg-5 d-flex d-column row" id="summary">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./img/icon/phoenix.png" style="width: 300px" alt="">
+                <h1 class="text-center">Anthony Jay Milton</h1>
+                <h2 class="text-center">Software Engineer</h2>
+                <h2 class="text-center mb-4"><a href="mailto:anthony.milton@ambivaly.com">anthony.milton@ambivaly.com</a></h2>
+                <span class="mb-5">Results-oriented Software Developer with a proven track record of dedication and adaptability. Leveraging 12 years of experience in leading airborne defense initiatives for the United States, I have transitioned to pursue my passion in the software industry where I aim to apply my sense of purpose and unique skillset to make a meaningful impact.</span>
+                <h1 class="text-center"><a href="https://github.com/ambivaly" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ambivaly/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></h1>
+            </div>
+
+
+            <!--Projects-->
+            <div class="resume-section p-3 p-lg-5 d-flex d-column row" id="projects">
+                <h1 class="mb-5">Projects:</h1>
+                <div class="projects-item  mb-5" id="adsb">
+                    <h2>ADS-B Display Application
+                        <a class="ms-2" href="https://github.com/ambivaly/sage-adsb-display-site" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://ambivaly.com/adsb" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </h2>
+                    <h5>| Python | React | Node | AWS DynamoDB |</h5>
+                    <ul>
+                        <li>Created backend service and frontend web application to view aircraft locations from an ADS-B receiver</li>
+                        <li>Data stored in a DynamoDB NoSQL database in JSON format, with checks to avoid duplicate reports</li>
+                        <li>Utilizes leaflet for map views, with custom markers for aircraft that rotate based on reported heading</li>
+                        <li>Replaced default leaflet popup interactions with new react component that displays details in a larger side window</li>
+                        <li>Custom responsive layout to ensure maps and images stay in same relative location despite screen size</li>
+                        <li>Hosting and data ingestion accomplished utilizing Node.js</li>
+                    </ul>
+                </div>
+                <div class="projects-item mb-5" id="catan">
+                    <h2>Catan Hand Calculator
+                        <a class="ms-2" href="https://github.com/ambivaly/catan-build-calc" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://ambivaly.com/catan" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </h2>
+                    <h5>| HTML | CSS | Javascript |</h5>
+                </div>
+                <div class="projects-item mb-5" id="catan">
+                    <h2>Provisio Capstone Project
+                        <a class="ms-2" href="https://github.com/ambivaly/provisio" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </h2>
+                    <h5>| Java | JSP | MySQL |</h5>
+                </div>
+            </div>
+
+            <!--Education & Certifications-->
+            <div class="resume-section p-3 p-lg-5 d-flex d-column row" id="edcerts">
+                <h1 class="mb-5">Education & Certifications</h1>
+                <div class="experience-item d-flex flex-column flex-md-row mb-5" id="c2bmo">
+                    <div class="edcerts-content me-auto">
+                        <h3>Bachelor of Science (BS), Software Development</h3>
+                        <h5>Bellevue University, NE</h5>
+                    </div>
+                    <div class="experience-date text-lg-end col-lg-5 text-nowrap mt-4">
+                        <h5>July 2023</h5>
+                    </div>
+                </div>
+
+                <div class="experience-item d-flex flex-column flex-md-row mb-5" id="c2bmo">
+                    <div class="edcerts-content me-auto">
+                        <h3>Associate of Science (AS), Air and Space Operations Technology</h3>
+                        <h5>Community College of the Air Force, AL</h5>
+                    </div>
+                    <div class="experience-date text-lg-end col-lg-5 text-nowrap mt-4">
+                        <h5>May 2023</h5>
+                    </div>
+                </div>
+
+                <div class="experience-item mb-5" id="clearance">
+                    <h3>Active SECRET US Security Clearance</h3>
+                </div>
+
+                <div class="experience item mb-5" id="certs">
+                    <ul>
+                        <li>Amazon Web Services Cloud Practitioner</li>
+                        <li>Certified Scrum Master</li>
+                        <li>Security+ Certified</li>
+                        <li>Multi-TDL Advanced Joint Interoperability Course (JT-102)</li>
+                        <li>Command and Control Battle Management Operator Technical School - Honor Graduate</li>
+                    </ul>
+                </div>
+
+                <div class="cert-table text-center mb-5">
+                    <a id="aws-cert" href="https://www.credly.com/badges/e9259d16-b24d-411d-9a42-a10174b13349/public_url" style="text-decoration:none">
+                        <img src="./img/certs/aws-certified-cloud-practitioner.png" width="200px">
+                    </a>
+                    <a id="scrum-master-cert" href="https://bcert.me/sjnadtnku" style="text-decoration:none">
+                        <img src="./img/certs/csm.png" width="200px">
+                    </a>
+                    <a id="security-cert" href="https://www.credly.com/badges/e88bdf18-dedb-4bc1-a2cd-62da3ed34442/public_url" style="text-decoration:none">
+                        <img src="./img/certs/comptia-security-ce-certification.png" width="200px">
+                    </a>
+                </div>
+            </div>
+
+            <!--Work Experience-->
+            <div class="resume-section p-3 p-lg-5 d-flex d-column row" id="work-experience">
+                <h1 class="mb-5">Work Experience:</h1>
+                <div class="experience-item d-flex flex-column flex-md-row mb-5" id="c2bmo">
+                    <div class="experience-content me-auto">
+                        <h2 class="mb-0">Command and Control Operations Team Lead</h2>
+                            <h3>United States Air Force</h3>
+                            <ul>
+                                <li>Developed an improved automatic aircraft identification system utilizing Boolean logic to determine friendly characteristics over the western United States, saving the DoD over $120,000 and 8,760 man-hours per year</li>
+                                <li>Lead a team of 28 individuals responsible for airborne detection, validation, and identification of air traffic over 3 million square miles of sovereign airspace and 300+ RADAR locations</li>
+                                <li>Additionally maintained the Air Force’s most complex secure joint tactical data link network in the United States with over 200 links spanning TCP, UDP, Satellite, RF (radio), and Serial (telephone) connections</li>
+                                <li>Consistently received operational evaluations within the top &lt1% of peer group, holding instructor and/or evaluator roles in every position held within military career and earning accolades as a superior performer</li>
+                                <li>Responded to supervisor directives, leading the tactical and professional development of a diverse team of 39 flight members, significantly contributing to their individual growth and team cohesion</li>
+                                <li>Delivered an impactful briefing to the Joint Requirements Oversight Council (JROC) to include the Vice Chairman of the Joint Chiefs of Staff (VCJCS), shedding light on technical limitations, and actively participated in shaping the Air Battle Management System (ABMS) initiatives to enhance overall mission accomplishment</li>
+                                <li>Directly supervised the development and implementation of Air Picture Management profiles and doctrines, overseeing office coordination and actively contributing to the refinement of Tactics, Techniques, and Procedures (TTP)</li>
+                            </ul>
+                    </div>
+                    <div class="experience-date text-lg-end col-lg-4 text-nowrap mt-4">
+                        <h5>February 2012 - Present</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
