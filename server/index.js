@@ -12,7 +12,9 @@ const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
         origin: '*',
-        methods: ['GET', 'POST'],
+        methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
+        transports: ['websocket'],
+        credentials: true,
     },
 });
 
