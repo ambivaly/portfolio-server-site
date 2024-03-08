@@ -57,39 +57,6 @@ const sendDataToClients = async () => {
 
 setInterval(sendDataToClients, 6000);
 
-/*const fetchDataAndWriteToFile = async () => {
-    try {
-
-        const currentUnixTimestamp = Math.floor(new Date().getTime() / 1000);
-        const currentMin = Math.floor(currentUnixTimestamp/60)*60
-        console.log(currentMin)
-
-
-        const params = {
-            TableName: tableName,
-            KeyConditionExpression: 'MinutePartition = :pk',
-            ExpressionAttributeValues: {
-              ':pk': { N: currentMin.toString() } 
-            }
-          };
-  
-        const result = await dynamoDB.query(params).promise();
-
-        if (result.Items.length > 0) {
-            const dataToWrite = JSON.stringify(result.Items, null, 2);
-            fs.writeFileSync(path.join(__dirname, '/adsb/aircraft_data.json'), dataToWrite);
-            //fs.writeFileSync(path.join('C:/Users/tjm55/Desktop/Coding Projects/Github Repos/sage-adsb-display-site/sage-radar/public/', 'aircraft_data.json'), dataToWrite);
-            console.log('Data written to file successfully.');
-        } else {
-            console.log('Item not found in DynamoDB.');
-        }
-    } catch (error) {
-        console.error('Error fetching data and writing to file:', error);
-    }
-};
-
-setInterval(fetchDataAndWriteToFile, 6000);*/
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'portfolio', 'index.html'))
 })
@@ -113,10 +80,6 @@ io.on('connection', (socket) => {
         console.log('Client disconnected');
     });
 });
-
-/*app.listen(port, () => {
-    console.log('Server listening on port 8000')
-})*/
 
 server.listen(port, () => {
     console.log('Websocket server listening on port 8000')
