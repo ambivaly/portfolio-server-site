@@ -13,6 +13,10 @@
 }
 */
 
+#topnav a:hover {
+    color: darkgoldenrod;
+}
+
 .resume-section {
     border-bottom: 1px solid black;
 }
@@ -41,4 +45,10 @@ a:link i, a:visited i , a:link, a:visited {
 a:hover i, a:active i, a:hover, a:active {
     color: darkgoldenrod;
     text-decoration: none;
+}
+
+@media (max-width: 576px) {
+    h3 {
+        font-size: 16px;
+    }
 }
