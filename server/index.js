@@ -7,15 +7,15 @@ const http = require('http');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8000;
 const server = http.createServer(app);
 const io = socketIo(server);
 
-app.use(cors())
+app.use(cors());
 
-app.use(express.static(path.join(__dirname, 'portfolio')))
-app.use(express.static(path.join(__dirname, 'catan')))
-app.use(express.static(path.join(__dirname, 'adsb')))
+app.use(express.static(path.join(__dirname, 'portfolio')));
+app.use(express.static(path.join(__dirname, 'catan')));
+app.use(express.static(path.join(__dirname, 'adsb')));
 
 
 
@@ -81,6 +81,8 @@ io.on('connection', (socket) => {
         console.log('Client disconnected');
     });
 });
+
+io.origins('*:*');
 
 server.listen(port, () => {
     console.log('Websocket server listening on port 8000')
