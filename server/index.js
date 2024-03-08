@@ -11,7 +11,7 @@ const port = process.env.PORT || 8000
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: 'www.ambivaly.com:8000',
+        origin: '*',
         methods: ['GET', 'POST'],
         allowedHeaders: ['Access-Control-Allow-Origin'],
         credentials: false
