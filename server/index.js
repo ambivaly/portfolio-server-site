@@ -9,15 +9,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8000
 const server = http.createServer(app);
-const io = socketIo(server, {
-    cors: {
-        origin: 'www.ambivaly.com:8000',
-        methods: ['GET', 'POST'],
-        allowedHeaders: ['Access-Control-Allow-Origin'],
-        credentials: false
-    }, 
-    allowEIO3: true
-});
+const io = socketIo(server);
 
 app.use(express.static(path.join(__dirname, 'portfolio')))
 app.use(express.static(path.join(__dirname, 'catan')))
