@@ -15,7 +15,8 @@ const io = socketIo(server, {
         methods: ['GET', 'POST'],
         allowedHeaders: ['Access-Control-Allow-Origin'],
         credentials: false
-    },
+    }, 
+    allowEIO3: true
 });
 
 app.use(express.static(path.join(__dirname, 'portfolio')))
