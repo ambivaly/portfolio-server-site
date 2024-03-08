@@ -11,10 +11,12 @@ const port = process.env.PORT || 8000
 const server = http.createServer(app);
 const io = socketIo(server);
 
+app.use(cors())
+
 app.use(express.static(path.join(__dirname, 'portfolio')))
 app.use(express.static(path.join(__dirname, 'catan')))
 app.use(express.static(path.join(__dirname, 'adsb')))
-app.use(cors())
+
 
 
 AWS.config.update({
