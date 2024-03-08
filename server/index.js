@@ -9,7 +9,12 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8000;
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, {
+    cors: {
+        origin: '*',
+        methods: ['GET', 'POST'],
+    },
+});
 
 app.use(cors());
 
@@ -81,8 +86,6 @@ io.on('connection', (socket) => {
         console.log('Client disconnected');
     });
 });
-
-io.origins('*:*');
 
 server.listen(port, () => {
     console.log('Websocket server listening on port 8000')
