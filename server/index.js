@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const AWS = require('aws-sdk')
-const fs = require('fs')
 const config = require('./config')
 const socketIo = require('socket.io');
 const http = require('http');
@@ -10,7 +9,12 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8000
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, {
+    cors: {
+        origin: '*',
+        methods: ['GET', 'POST'],
+    },
+});
 
 app.use(express.static(path.join(__dirname, 'portfolio')))
 app.use(express.static(path.join(__dirname, 'catan')))
