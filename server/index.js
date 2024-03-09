@@ -13,7 +13,7 @@ const io = socketIo(server, {
     cors: {
         origin: '*',
         methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
-        transports: ['websocket'],
+        transports: ['websocket', 'polling'],
         credentials: true,
     },
 });
