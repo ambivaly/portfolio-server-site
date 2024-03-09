@@ -115,6 +115,7 @@ dist
 
 # Config Variables
 config.js
+*.ssl
 
 # Aircraft Data
 aircraft_data.json
