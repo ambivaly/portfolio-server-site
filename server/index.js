@@ -4,21 +4,22 @@ const AWS = require('aws-sdk')
 const config = require('./config')
 const socketIo = require('socket.io');
 const fs = require('fs');
+const http = require('http');
 const https = require('https');
 const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 8000;
 
-const server = http.createServer(app);
+/*const server = http.createServer(app);*/
 
-/*const server = https.createServer({
+const server = https.createServer({
     key: fs.readFileSync('./key.ssl'),
     cert: fs.readFileSync('./cert.ssl'),
     ca: fs.readFileSync('./ca.ssl'),
     requestCert: true,
     rejectUnauthorized: false
-}, app);*/
+}, app);
 
 const io = socketIo(server, {
     cors: {
